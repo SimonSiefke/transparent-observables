@@ -1,0 +1,15 @@
+
+var x = 0
+var k = x+1+1+x
+var y = 1
+
+console.log(x)
+console.log(add1(K+1)*3)
+x++
+
+function add1(value){
+  y++
+	return value+22
+}
+
+console.log(y)
