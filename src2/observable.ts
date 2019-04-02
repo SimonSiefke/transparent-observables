@@ -6,6 +6,7 @@ export function observable(value: () => any) {
   const proxy = new Proxy(
     {
       value: value(), // set the initial value
+      key: '',
     },
     {
       get(obj, key: 'value') {
@@ -16,7 +17,7 @@ export function observable(value: () => any) {
         // return the value
         return obj[key]
       },
-      set(obj, key: 'value', value) {
+      set(obj, key: 'key' | 'value', value) {
         const oldValue = obj[key]
         // do nothing if the value didn't change
         if (value === oldValue) {

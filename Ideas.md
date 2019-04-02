@@ -52,3 +52,6 @@ function sort(arr) {
   }
 }
 ```
+
+1. how the compiler works
+1. inhaltsverzeichnis
