@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/SimonSiefke/transparent-observables/compare/v1.0.2...v1.0.3) (2019-04-02)
+
+
+### Bug Fixes
+
+* try to fix build ([91953ea](https://github.com/SimonSiefke/transparent-observables/commit/91953ea))
+
 ## [1.0.2](https://github.com/SimonSiefke/transparent-observables/compare/v1.0.1...v1.0.2) (2019-04-02)
 
 
