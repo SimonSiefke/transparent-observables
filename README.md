@@ -1,3 +1,6 @@
+[![travis build](https://img.shields.io/travis/com/SimonSiefke/transparent-observables.svg?style=flat-square)](https://travis-ci.com/SimonSiefke/transparent-observables) [![MIT License](https://img.shields.io/npm/l/transparent-observables.svg?style=flat-square)](http://opensource.org/licenses/MIT) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+
+<!--
 ## disabled expressions
 
 ```js
@@ -43,8 +46,7 @@ const states = {
 const nextState = states.transition('yellow', 'TIMER')
 ```
 
-const firstState = 'green'
-const nextState =
+const firstState = 'green' const nextState =
 
 ```js
 const active = []
@@ -56,4 +58,4 @@ for (const button of buttons) {
     active = [...buttons.filter(b => b !== button), button]
   })
 }
-```
+``` -->
