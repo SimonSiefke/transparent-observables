@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node scripts/create_pdf.js"
+    "build:docs": "cd docs && npm run build && cd .. && node scripts/create_pdf.js",
+    "postinstall": "cd docs && npm install && cd .."
   },
   "keywords": [],
   "author": "Simon Siefke",

@@ -1,6 +1,8 @@
 node_modules
 out.pdf
 .cache
+dist
+out
 
 # Logs
 logs
