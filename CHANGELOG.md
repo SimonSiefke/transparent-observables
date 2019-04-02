@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.0.6...v1.1.0) (2019-04-02)
+
+
+### Bug Fixes
+
+* ignore cache ([b52f764](https://github.com/SimonSiefke/transparent-observables/commit/b52f764))
+
+
+### Features
+
+* eslint ([60e6a64](https://github.com/SimonSiefke/transparent-observables/commit/60e6a64))
+
 ## [1.0.4](https://github.com/SimonSiefke/transparent-observables/compare/v1.0.3...v1.0.4) (2019-04-02)
 
 
