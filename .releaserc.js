@@ -1,20 +1,21 @@
 module.exports = {
-  verifyConditions: ['@semantic-release/github'],
-  prepare: [
-    {
-      path: '@semantic-release/changelog',
-      changelogFile: 'CHANGELOG.md',
-    },
-    '@semantic-release/git',
-  ],
-  publish: [
-    {
-      path: '@semantic-release/github',
-      assets: 'out.pdf',
-    },
-    {
-      path: '@semantic-release/github',
-      assets: 'index.html',
-    },
+  plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/changelog',
+      {
+        changelogFile: 'CHANGELOG.md',
+      },
+    ],
+    [
+      '@semantic-release/github',
+      {
+        assets: [
+          { path: 'out.pdf', label: 'pdf' },
+          { path: 'index.html', label: 'html' },
+        ],
+      },
+    ],
   ],
 }
