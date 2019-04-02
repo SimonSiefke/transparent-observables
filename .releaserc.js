@@ -8,13 +8,11 @@ module.exports = {
         changelogFile: 'CHANGELOG.md',
       },
     ],
+    '@semantic-release/git',
     [
       '@semantic-release/github',
       {
-        assets: [
-          { path: 'out.pdf', label: 'pdf' },
-          { path: 'index.html', label: 'html' },
-        ],
+        assets: [{ path: 'out.pdf', label: 'transparent-observables.pdf' }],
       },
     ],
   ],

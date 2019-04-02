@@ -1,24 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const puppeteer = require('puppeteer')
 const fs = require('fs')
 const path = require('path')
-var finalhandler = require('finalhandler')
-
-var http = require('http')
-var serveStatic = require('serve-static')
+const finalhandler = require('finalhandler')
+const http = require('http')
+const serveStatic = require('serve-static')
 
 const root = path.join(__dirname, '..')
-var serve = serveStatic(root)
-
-// Create server
-var server = http.createServer(function onRequest(req, res) {
-  // @ts-ignore
-  serve(req, res, finalhandler(req, res))
-})
-server.listen(3000, async () => {
-  const pdf = await printPDF()
-  fs.writeFileSync(path.join(root, './out.pdf'), pdf)
-  server.close()
-})
 
 async function printPDF() {
   const browser = await puppeteer.launch({ headless: true })
@@ -35,3 +24,16 @@ async function printPDF() {
   await browser.close()
   return pdf
 }
+
+const serve = serveStatic(root)
+
+// Create server
+const server = http.createServer((req, res) => {
+  // @ts-ignore
+  serve(req, res, finalhandler(req, res))
+})
+server.listen(3000, async () => {
+  const pdf = await printPDF()
+  fs.writeFileSync(path.join(root, './out.pdf'), pdf)
+  server.close()
+})
