@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/SimonSiefke/transparent-observables/compare/v1.1.0...v1.1.1) (2019-04-02)
+
+
+### Bug Fixes
+
+* eslint ([b581345](https://github.com/SimonSiefke/transparent-observables/commit/b581345))
+
 # [1.1.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.0.6...v1.1.0) (2019-04-02)
 
 
