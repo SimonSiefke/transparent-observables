@@ -12,5 +12,9 @@ module.exports = {
       path: '@semantic-release/github',
       assets: 'out.pdf',
     },
+    {
+      path: '@semantic-release/github',
+      assets: 'index.html',
+    },
   ],
 }
