@@ -1,13 +1,16 @@
 language: node_js
 node_js: lts/*
 
+script:
+  - npm run build
+
 stages:
   - name: release
     if: branch = master AND type = push AND fork = false
 
 jobs:
   include:
-    - stage: build
-      script: npm run build
     - stage: release
-      script: npx semantic-release
+      script:
+        - npm run build
+        - npx semantic-release
