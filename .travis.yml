@@ -2,7 +2,7 @@ language: node_js
 node_js: lts/*
 
 script:
-  - npm run build
+  - npm run build:docs
 
 stages:
   - name: release
@@ -12,5 +12,5 @@ jobs:
   include:
     - stage: release
       script:
-        - npm run build
+        - npm run build:docs
         - npx semantic-release
