@@ -1,4 +1,4 @@
-import { observable, effect } from './observable'
+import { observable, effect } from '../src/observable'
 
 const x = observable(() => 1)
 
