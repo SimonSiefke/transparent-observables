@@ -10,4 +10,6 @@ effect(() => console.log('y is', y.value))
 x.value = 2
 x.value = 333
 
-effect(() => (x.value = y.value + 1))
+effect(() => {
+  x.value = y.value + 1
+})

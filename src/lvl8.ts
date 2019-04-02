@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign,@typescript-eslint/no-use-before-define, @typescript-eslint/explicit-function-return-type,import/no-default-export */
 export default function(babel) {
   const { types: t } = babel
   return {
@@ -18,6 +19,7 @@ export default function(babel) {
             if (isBinaryExpression) {
               return argument
             }
+            return null
           }
         )
         const program = path.findParent(t.isProgram)
@@ -55,10 +57,10 @@ export default function(babel) {
           return
         }
         if (leftIsVariable) {
-          const name = path.node.left.name
+          const { name } = path.node.left
           path.node.left = buildMemberExpression(name)
         } else {
-          const name = path.node.right.name
+          const { name } = path.node.right
           path.node.right = buildMemberExpression(name)
         }
       },
@@ -72,7 +74,7 @@ export default function(babel) {
         ) {
           return
         }
-        const name = path.node.expression.name
+        const { name } = path.node.expression
         path.node.expression = buildMemberExpression(name)
       },
     },
