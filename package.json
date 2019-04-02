@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node scripts/create_pdf.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,13 @@
   },
   "devDependencies": {
     "@babel/types": "^7.3.2",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/github": "^5.2.10",
+    "finalhandler": "^1.1.1",
+    "puppeteer": "^1.14.0",
+    "semantic-release": "^15.13.3",
+    "serve-static": "^1.13.2",
     "ts-node": "^8.0.3",
     "typescript": "^3.3.3"
   }
