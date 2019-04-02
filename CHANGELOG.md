@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.1.2...v1.2.0) (2019-04-02)
+
+
+### Features
+
+* mdx ([60d4b3b](https://github.com/SimonSiefke/transparent-observables/commit/60d4b3b))
+
 ## [1.1.2](https://github.com/SimonSiefke/transparent-observables/compare/v1.1.1...v1.1.2) (2019-04-02)
 
 
