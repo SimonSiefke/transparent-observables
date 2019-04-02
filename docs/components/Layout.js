@@ -12,10 +12,7 @@ const Style = ({ children }) => (
 class TwitterEmoji extends React.Component {
   componentDidMount() {
     // @ts-ignore
-    twemoji.parse(document.body)
-    setTimeout(() => {
-      document.body.innerHTML += 'noooooo'
-    }, 500)
+    window.twemoji.parse(document.body)
   }
   render() {
     return (
