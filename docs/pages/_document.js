@@ -12,10 +12,6 @@ export default class _Document extends Document {
     return { ...page, styleTags }
   }
 
-  componentDidMount() {
-    console.log('hljs-keyword')
-  }
-
   render() {
     const { styleTags } = this.props
 
