@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/SimonSiefke/transparent-observables/compare/v1.2.0...v1.2.1) (2019-04-02)
+
+
+### Bug Fixes
+
+* trigger ci ([7a94c58](https://github.com/SimonSiefke/transparent-observables/commit/7a94c58))
+
 # [1.2.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.1.2...v1.2.0) (2019-04-02)
 
 
