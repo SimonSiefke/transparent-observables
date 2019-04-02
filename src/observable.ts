@@ -1,6 +1,13 @@
+/* eslint-disable no-param-reassign, no-shadow */
 let target: (() => void) | null = null
 
-export function observable(value: () => any) {
+export function effect(fn: () => void): void {
+  target = fn
+  target()
+  target = null
+}
+
+export function observable(value: () => any): any {
   // A list of observers that depend on this observable
   const observers = new Set()
   const proxy = new Proxy(
@@ -31,12 +38,8 @@ export function observable(value: () => any) {
       },
     }
   )
-  effect(() => (proxy.value = value()))
+  effect(() => {
+    proxy.value = value()
+  })
   return proxy
-}
-
-export function effect(fn: () => void) {
-  target = fn
-  target()
-  target = null
 }

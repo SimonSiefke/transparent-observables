@@ -1,5 +1,5 @@
 {
-  "name": "tso",
+  "name": "transparent-observables",
   "version": "0.0.0-semantically-released",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,10 @@
     "build": "node scripts/create_pdf.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "escodegen": "^1.9.1",
-    "esprima": "^4.0.0",
-    "estraverse": "^4.2.0"
-  },
+  "author": "Simon Siefke",
+  "license": "MIT",
   "devDependencies": {
-    "@babel/types": "^7.3.2",
+    "@babel/types": "^7.4.0",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.2.10",
