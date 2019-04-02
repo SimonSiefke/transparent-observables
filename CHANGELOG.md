@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.2.1...v1.3.0) (2019-04-02)
+
+
+### Features
+
+* syntax highlighting ([fecaeef](https://github.com/SimonSiefke/transparent-observables/commit/fecaeef))
+
 ## [1.2.1](https://github.com/SimonSiefke/transparent-observables/compare/v1.2.0...v1.2.1) (2019-04-02)
 
 
