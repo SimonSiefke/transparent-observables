@@ -3,18 +3,11 @@ import { ServerStyleSheet, createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 
-.underscore-line {
-  border-bottom: 1px solid black;
-  display: inline-block;
-  transform: translateY(2px);
-  width: 80px;
-
-  &.short{
-    width: 80px;
-  }
-  &.long{
-    width: 80px;
-  }
+figure{
+  margin:0
+}
+figcaption{
+text-align:center;
 }
 `
 export default class _Document extends Document {
