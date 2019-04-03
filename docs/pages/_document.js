@@ -3,8 +3,6 @@ import { ServerStyleSheet, createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 body{
-  line-height: 1.5;
-  font-size:1.2rem;
   margin: calc(4vw + 30px) !important;
 }
 .underscore-line {
