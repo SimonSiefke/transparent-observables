@@ -6,7 +6,6 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 export default ({ children, className, live, render }) => {
   const language = className.replace(/language-/, '')
-  console.log(language, children)
   return (
     <LiveProvider
       code={`<div><p>ok</p>\n<p>ok</p>\n</div>`}

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "cd docs && npm run dev",
     "build:docs": "cd docs && npm run build && cd .. && node scripts/create_pdf.js",
     "postinstall": "cd docs && npm install && cd .."
   },
