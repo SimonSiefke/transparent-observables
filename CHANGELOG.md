@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.4.0...v1.5.0) (2019-04-03)
+
+
+### Features
+
+* some placeholder content ([51fdf5d](https://github.com/SimonSiefke/transparent-observables/commit/51fdf5d))
+
 # [1.4.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.3.0...v1.4.0) (2019-04-02)
 
 
