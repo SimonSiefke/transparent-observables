@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.7.0...v1.8.0) (2019-04-03)
+
+
+### Features
+
+* add block about observables in css ([e62943f](https://github.com/SimonSiefke/transparent-observables/commit/e62943f))
+
 # [1.7.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.6.0...v1.7.0) (2019-04-03)
 
 
