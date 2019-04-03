@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.6.0...v1.7.0) (2019-04-03)
+
+
+### Features
+
+* spreadsheet ([c8c85ad](https://github.com/SimonSiefke/transparent-observables/commit/c8c85ad))
+
 # [1.6.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.5.1...v1.6.0) (2019-04-03)
 
 
