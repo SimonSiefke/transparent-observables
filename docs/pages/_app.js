@@ -2,10 +2,15 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/tag'
 import CodeBlock from '../components/CodeBlock'
 import styled from 'styled-components'
+import _ from 'lodash'
 
 const components = {
   pre: props => <div {...props} />,
   code: CodeBlock,
+  h1: props => <h1 id={_.kebabCase(props.children)}>{props.children}</h1>,
+  h2: props => <h2 id={_.kebabCase(props.children)}>{props.children}</h2>,
+  h3: props => <h3 id={_.kebabCase(props.children)}>{props.children}</h3>,
+  h4: props => <h4 id={_.kebabCase(props.children)}>{props.children}</h4>,
 }
 
 const Main = styled.main`
@@ -21,10 +26,16 @@ const Main = styled.main`
   margin: 0 auto;
 `
 
+const Wrapper = styled.div`
+  margin: calc(4vw + 30px) !important;
+`
+
 export default ({ Component, pageProps }) => (
-  <Main>
-    <MDXProvider components={components}>
-      <Component {...pageProps} />
-    </MDXProvider>
-  </Main>
+  <Wrapper>
+    <Main>
+      <MDXProvider components={components}>
+        <Component {...pageProps} />
+      </MDXProvider>
+    </Main>
+  </Wrapper>
 )

@@ -6,31 +6,32 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 export default ({ children, className, live, render }) => {
   const language = className.replace(/language-/, '')
+
+  if (live) {
+    return (
+      <LiveProvider code={children} language={language}>
+        <LivePreview />
+        <div style={{ background: '#282A36' }}>
+          <LiveEditor />
+        </div>
+        <LiveError />
+      </LiveProvider>
+    )
+  }
+
   return (
-    <LiveProvider
-      code={`<div><p>ok</p>\n<p>ok</p>\n</div>`}
-      language={language}
-    >
-      <LivePreview />
-      <div style={{ background: '#282A36' }}>
-        <LiveEditor />
-      </div>
-      <LiveError />
-    </LiveProvider>
+    <Highlight {...defaultProps} code={children} language={language}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={{ ...style, padding: '20px' }}>
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
   )
-  // return (
-  //   <Highlight {...defaultProps} code={children} language={language}>
-  //     {({ className, style, tokens, getLineProps, getTokenProps }) => (
-  //       <pre className={className} style={{ ...style, padding: '20px' }}>
-  //         {tokens.map((line, i) => (
-  //           <div key={i} {...getLineProps({ line, key: i })}>
-  //             {line.map((token, key) => (
-  //               <span key={key} {...getTokenProps({ token, key })} />
-  //             ))}
-  //           </div>
-  //         ))}
-  //       </pre>
-  //     )}
-  //   </Highlight>
-  // )
 }

@@ -11,6 +11,7 @@
     "@mdx-js/loader": "^0.20.3",
     "@mdx-js/mdx": "^0.20.3",
     "@zeit/next-mdx": "^1.2.0",
+    "lodash": "^4.17.11",
     "next": "^8.0.4",
     "polished": "^3.2.0",
     "prism-react-renderer": "^0.1.6",

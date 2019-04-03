@@ -2,9 +2,7 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet, createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-body{
-  margin: calc(4vw + 30px) !important;
-}
+
 .underscore-line {
   border-bottom: 1px solid black;
   display: inline-block;
