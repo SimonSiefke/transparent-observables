@@ -4,17 +4,23 @@
   <!-- What did I do in a nutshell?  -->
 
 - [Introduction (4 pages)](#introduction)
-  <!--  What is the problem? -->
+  <!--  What is the problem? and why -->
   <!-- Explain the observable pattern -->
   <!-- Explain the "transparent observable" concept and show examples -->
 
-- [Main]
-  <!-- comparison and summary of existing approaches -->
-  - [State of the art / analysis of existing approaches / related work]
-  <!-- How did I solve the problem? -->
-  <!-- Which tools did I choose and why -->
-  <!-- Explain the code in detail -->
-  - [Implementation](#building-a-transpiler)
+<!-- comparison and summary of existing approaches -->
+- [State of the art / analysis of existing approaches / related work]
+<!-- How did I solve the problem? -->
+<!-- Which tools did I choose and why -->
+<!-- what could be better -->
+- [Explanation (need better title)]
+<!-- why from which language to which -->
+<!-- explain the syntax of the language create a name -->
+<!-- Explanation of the solution independent of the code -->
+<!-- target language explanation and syntax -->
+- [Implementation](#building-a-transpiler)
+<!-- Explain the code in detail -->
+
 
 - [Conclusion & Discussion]
     <!-- What did I find out? -->
@@ -22,6 +28,7 @@
     <!-- What does it mean? -->
     <!-- For which fields could it be used -->
     <!-- Critical reflection -->
+    <!-- future research -->
 
 - [Outroduction]
   <!--  Acknowledgments, similar ideas/frameworks -->
