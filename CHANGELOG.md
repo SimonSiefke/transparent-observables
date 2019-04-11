@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.8.0...v1.9.0) (2019-04-11)
+
+
+### Features
+
+* add content ([ba63486](https://github.com/SimonSiefke/transparent-observables/commit/ba63486))
+
 # [1.8.0](https://github.com/SimonSiefke/transparent-observables/compare/v1.7.0...v1.8.0) (2019-04-03)
 
 
