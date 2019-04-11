@@ -2,7 +2,9 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet, createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-
+p{
+  text-align:justify
+}
 figure{
   margin:0
 }
