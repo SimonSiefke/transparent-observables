@@ -1,6 +1,7 @@
 # Table of contents
 
 - [Abstract (0.75 pages)]
+
   <!-- What did I do in a nutshell?  -->
 
 - [Introduction (4 pages)](#introduction)
@@ -9,20 +10,23 @@
   <!-- Explain the "transparent observable" concept and show examples -->
 
 <!-- comparison and summary of existing approaches -->
+
 - [State of the art / analysis of existing approaches / related work]
-<!-- How did I solve the problem? -->
-<!-- Which tools did I choose and why -->
-<!-- what could be better -->
+  <!-- How did I solve the problem? -->
+  <!-- Which tools did I choose and why -->
+  <!-- what could be better -->
 - [Explanation (need better title)]
-<!-- why from which language to which -->
-<!-- explain the syntax of the language create a name -->
-<!-- Explanation of the solution independent of the code -->
-<!-- target language explanation and syntax -->
+  <!-- Constructs -->
+  <!-- API -->
+  <!-- why from which language to which -->
+  <!-- explain the syntax of the language create a name -->
+  <!-- Explanation of the solution independent of the code -->
+  <!-- target language explanation and syntax -->
 - [Implementation](#building-a-transpiler)
-<!-- Explain the code in detail -->
+  <!-- Explain the code in detail -->
 
+* [Conclusion & Discussion]
 
-- [Conclusion & Discussion]
     <!-- What did I find out? -->
     <!-- Is the pattern actually useful -->
     <!-- What does it mean? -->
@@ -30,7 +34,7 @@
     <!-- Critical reflection -->
     <!-- future research -->
 
-- [Outroduction]
+* [Outroduction]
   <!--  Acknowledgments, similar ideas/frameworks -->
   <!-- Literature Cited -->
   <!-- Appendices -->
