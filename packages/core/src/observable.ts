@@ -9,7 +9,7 @@ export function effect(fn: () => void): void {
   target = null
 }
 
-function recursiveProxy(value, handler) {
+function recursiveProxy(value, handler): any {
   if (typeof value !== 'object' || value === null) {
     return value
   }
@@ -20,7 +20,7 @@ export function observable<T>(value: () => T): { value: T } {
   // A list of observers that depend on this observable
   const observers = new Set()
   /**
-   * notifies all observers
+   * Notifies all observers.
    */
   const notify = () => {
     observers.forEach(fn => fn())
