@@ -1,1 +1,23 @@
 https://www.youtube.com/watch?v=mEvo6TVAf64 13:00
+
+
+if is observable -> return
+else transform it
+
+
+
+const x = 1 // observable
+
+a.b=c // observable
+
+x=x+1 // nothing
+
+const y = x // computed
+
+const z = x + y // computed
+
+console.log(x) // effect
+
+increment(x) // effect
+
+x++ // nothing
