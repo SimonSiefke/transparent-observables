@@ -1,105 +1,99 @@
 /* eslint-disable no-param-reassign,@typescript-eslint/no-use-before-define, @typescript-eslint/explicit-function-return-type,import/no-default-export */
 export default function(babel) {
-  const { types: t } = babel
+  const { types: t } = babel;
   return {
     visitor: {
       CallExpression(path) {
-        const originalExpression = path.findParent(t.isExpressionStatement)
+        const originalExpression = path.findParent(t.isExpressionStatement);
         if (!originalExpression) {
-          return
+          return;
         }
+        if(!originalExpression.node.expression.arguments){
+        return}
+        console.log(originalExpression.node.expression)
         originalExpression.node.expression.arguments = originalExpression.node.expression.arguments.map(
           argument => {
+
             const isBinaryExpression = looksLike(argument, {
-              type: 'BinaryExpression',
-            })
+              type: "BinaryExpression"
+            });
             if (isIdentifier(argument)) {
-              return buildMemberExpression(argument.name)
+              return buildMemberExpression(argument.name);
             }
             if (isBinaryExpression) {
               return argument
             }
-            return null
           }
-        )
-        const program = path.findParent(t.isProgram)
-        const expressionIndex = program.node.body.indexOf(
-          originalExpression.node
-        )
-        const callExpression = buildEffectCallExpression(
-          originalExpression.node
-        )
-        const expressionStatement = t.expressionStatement(callExpression)
-        program.node.body.splice(expressionIndex, 1, expressionStatement)
+        );
+        const program = path.findParent(t.isProgram);
+        const expressionIndex = program.node.body.indexOf(originalExpression.node);
+        const callExpression = buildEffectCallExpression(originalExpression.node);
+        const expressionStatement = t.expressionStatement(callExpression);
+        program.node.body.splice(expressionIndex, 1, expressionStatement);
       },
       VariableDeclaration(path) {
         const newDeclarations = path.node.declarations.map(declaration => {
-          const result = t.variableDeclarator(
-            declaration.id,
-            buildObservableExpression(declaration.init)
-          )
-          return result
-        })
-        path.node.declarations = newDeclarations
+          const result = t.variableDeclarator(declaration.id, buildObservableExpression(declaration.init));
+          return result;
+        });
+        path.node.declarations = newDeclarations;
       },
       BinaryExpression(path) {
         const leftIsVariable = looksLike(path.node, {
           left: {
-            type: 'Identifier',
-          },
-        })
+            type: "Identifier"
+          }
+        });
         const rightIsVariable = looksLike(path.node, {
           right: {
-            type: 'Identifier',
-          },
-        })
+            type: "Identifier"
+          }
+        });
         if (!leftIsVariable && !rightIsVariable) {
-          return
+          return;
         }
         if (leftIsVariable) {
-          const { name } = path.node.left
-          path.node.left = buildMemberExpression(name)
+          const name = path.node.left.name;
+          path.node.left = buildMemberExpression(name);
         } else {
-          const { name } = path.node.right
-          path.node.right = buildMemberExpression(name)
+          const name = path.node.right.name;
+          path.node.right = buildMemberExpression(name);
         }
       },
       ExpressionStatement(path) {
         if (
           !looksLike(path.node, {
             expression: {
-              name: {},
-            },
+              name: {}
+            }
           })
         ) {
-          return
+          return;
         }
-        const { name } = path.node.expression
-        path.node.expression = buildMemberExpression(name)
-      },
-    },
-  }
+        const name = path.node.expression.name;
+        path.node.expression = buildMemberExpression(name);
+      }
+    }
+  };
 
   function buildObservableExpression(value) {
-    return t.callExpression(t.identifier('observable'), [
-      t.arrowFunctionExpression([], value),
-    ])
+    return t.callExpression(t.identifier("observable"), [t.arrowFunctionExpression([], value)]);
   }
 
   function buildEffectCallExpression(node) {
-    return t.callExpression(t.identifier('effect'), [
-      t.arrowFunctionExpression([], t.blockStatement([node], [])),
-    ])
+    return t.callExpression(t.identifier("effect"), [
+      t.arrowFunctionExpression([], t.blockStatement([node], []))
+    ]);
   }
 
   function buildMemberExpression(name) {
-    return t.memberExpression(t.identifier(name), t.identifier('value'))
+    return t.memberExpression(t.identifier(name), t.identifier("value"));
   }
 
   function isIdentifier(node) {
     return looksLike(node, {
-      type: 'Identifier',
-    })
+      type: "Identifier"
+    });
   }
 }
 
@@ -108,16 +102,16 @@ function looksLike(a, b) {
     a &&
     b &&
     Object.keys(b).every(bKey => {
-      const bVal = b[bKey]
-      const aVal = a[bKey]
-      if (typeof bVal === 'function') {
-        return bVal(aVal)
+      const bVal = b[bKey];
+      const aVal = a[bKey];
+      if (typeof bVal === "function") {
+        return bVal(aVal);
       }
-      return isPrimitive(bVal) ? bVal === aVal : looksLike(aVal, bVal)
+      return isPrimitive(bVal) ? bVal === aVal : looksLike(aVal, bVal);
     })
-  )
+  );
 }
 
 function isPrimitive(val) {
-  return val == null || /^[sbn]/.test(typeof val)
+  return val == null || /^[sbn]/.test(typeof val);
 }
