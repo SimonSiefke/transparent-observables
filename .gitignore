@@ -4,6 +4,7 @@ out.pdf
 dist
 out
 faq
+o.*
 
 # Logs
 logs
