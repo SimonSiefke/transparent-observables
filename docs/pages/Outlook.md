@@ -74,3 +74,4 @@ There is a lot of potential for cleaner code not only for the localstorage API, 
 - Databases in general
 - WebRTC (Real Time Communication)
 - Websockets and live data, online multiplayer games
+- DOM API's, e.g. scroll offset, mouse position
