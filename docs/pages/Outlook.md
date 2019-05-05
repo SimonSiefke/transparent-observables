@@ -38,3 +38,39 @@ Also as transparent observables are very close to natural language, there might 
 ```
 
 Even though this probably won't happen any time soon, it is interesting to think about how easy programming could become. And if it would work, it would scale very well because of the way components can be structured: Ideally there are just a lot of small, independent components for a large application.
+
+It is also probable that there will be more API's or libraries written in or at least compatible with a language that has transparent observables. For example it would be useful if there was a reactive version of the localStorage API whose stored values are bound to JavaScript variables, e.g.
+
+```txt
+<button on:click={() => count++}>{count}</button>
+
+<script>
+  let count <-> localStorage.count || 0
+</script>
+```
+
+In this example the variable count would be 2-way bound to the localStorage, which means when `count` changes, the value of count is persisted into local storage and when the localStorage changes, the value of `count` of would updated as well. This also means that the behavior of this simple app is synchronized between all tabs and restored when a page is closed and reopened.
+
+Currently one way to do that (in svelte) would be:
+
+```html
+<button on:click={()=>count++}>{count}</button>
+
+<script>
+  let count = JSON.parse(localStorage.getItem("count") || "0");
+  window.addEventListener("storage", event => {
+    count = JSON.parse(event.newValue);
+  });
+  $: {
+    localStorage.setItem("count", JSON.stringify(count));
+  }
+</script>
+```
+
+[Edit this example on CodeSandbox](https://codesandbox.io/s/01m73oqrrv)
+
+There is a lot of potential for cleaner code not only for the localstorage API, but also for
+
+- Databases in general
+- WebRTC (Real Time Communication)
+- Websockets and live data, online multiplayer games
