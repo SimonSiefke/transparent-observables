@@ -1,6 +1,6 @@
 ---
 apfelmus-quote: 'blog'
-
+elliot: ['https://www.youtube.com/watch?v=j3Q32brCUAI', 'https://www.youtube.com/watch?v=teRC_Lf61Gw', 'http://conal.net/papers/push-pull-frp/']
 ---
 
 # Functional Reactive Programming
@@ -14,3 +14,11 @@ With programming paradigms there are always rules that make programming stricter
 The main parts of functional programming are
 
 - avoid side effects / pure functions / immutability
+
+
+## Elliot
+
+Conal Elliot says that the parts that define functional reactive programming are
+
+- precise and simple denotation
+- Continous time
