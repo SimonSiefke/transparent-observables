@@ -16,7 +16,7 @@ Two things are important for transparent observables:
 
 There is an assignment operator: `=`.
 
-There is a 1-way-binding operator: `<-`. When the value/variable on the right hand side ist a constant, the 1-way-binding operator is equivalent to the assignment operator.
+There is a 1-way-binding operator: `<-`. When the value/variable/expression on the right hand side is a constant, the 1-way-binding operator is equivalent to the assignment operator.
 
 One way to achieve 2-way binding, is to use two times 1-way binding
 
