@@ -1,14 +1,16 @@
-import fs from 'fs'
-import path from 'path'
+import * as fs from 'fs'
+import * as path from 'path'
 
 const file = fs.readFileSync(path.join(__dirname, './index.txt'), 'utf-8')
 
 const nonEmptyLineRE = /^([a-zA-Z]+)\s*(<-|<->|=)\s*([^\s]+)\s*/
 const emptyLineRE = /^\s*$/
 const expressionRE = /console/
+const commentRE = /^\/\//
 
 const lines = file.split('\n')
 const assigned = new Set()
+const assignedExpressions = new Set()
 
 
 function isNumber(code) {
@@ -27,6 +29,9 @@ for (let i = 0; i < lines.length; i++) {
   if (emptyLineRE.test(line)) {
     continue
   }
+  if (commentRE.test(line)) {
+    continue
+  }
   if (expressionRE.test(line)) {
     variablesCode.push(line)
     continue
@@ -39,15 +44,17 @@ for (let i = 0; i < lines.length; i++) {
 
   const leftName = left.trim()
   if (middle === '=') {
-    // update.push(line)
-  } else if (middle === '<-') {
     const variables = getVariables(right)
+    if (assignedExpressions.has(leftName)) {
+      throw new Error(`Error on line ${i + 1}: cannot reassign variable ${leftName} because it is bound to an expression`)
+    }
     if (variables.length > 0) {
+      assignedExpressions.add(leftName)
       update.push(`if(${variables.map(variable => `dirty.${variable}`).join('||')}){${leftName}=${right};invalidate('${leftName}')}`)
     }
   }
   if (assigned.has(leftName)) {
-    variablesCode.push(`${leftName} = ${right}; invalidate('${left}'); update()`)
+    variablesCode.push(`${leftName} = ${right}; invalidate('${leftName}'); update()`)
   } else {
     variablesCode.push(`let ${leftName} = ${right}`)
     assigned.add(leftName)

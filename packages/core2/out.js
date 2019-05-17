@@ -9,12 +9,11 @@ function invalidate(variableName, variableValue){
 }
 
 let x =  1
-let y =  x + 1
-let z =  y+x
-x = x+1; invalidate('x'); update()
-console.log(z)
+let y =  x * 2
+x =  222; invalidate('x'); update()
+x =  1; invalidate('x'); update()
+console.log(y)
 function update(){
-  if(dirty.x){y= x + 1;invalidate('y')}
-  if(dirty.y||dirty.x){z= y+x;invalidate('z')}
+  if(dirty.x){y= x * 2;invalidate('y')}
   dirty={}
 }

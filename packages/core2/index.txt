@@ -1,5 +1,6 @@
-x <- 1
-y <- x + 1
-z <- y+x
-x=x+1
-console.log(z)
+x = 1
+y = x * 2
+x = 222
+//y = 3
+x = 1
+console.log(y)
