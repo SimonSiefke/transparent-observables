@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "types": ["jest", "node"],
+    "allowJs": true,
+    "noEmit": true,
+    "checkJs": true,
+    "target": "esnext",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["generated/*.js"]
+}

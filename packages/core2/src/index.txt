@@ -1,6 +1,6 @@
 x = 1
-y = x * 2
+//y = x * 2
 x = 222
 //y = 3
 x = 1
-console.log(y)
+//console.log(y)
