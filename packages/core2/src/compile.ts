@@ -46,57 +46,64 @@ export function compile(file: string): string {
 
     const [left, middle, right] = line.split(/(<-|<->|=)(.+)/)
 
-    const leftName = left.trim()
+    const leftTrimmed = left.trim()
+
     if (middle === '=') {
       const variables = getVariables(right)
-      if (assignedExpressions.has(leftName)) {
+      if (assignedExpressions.has(leftTrimmed)) {
         throw new Error(
           `Error on line ${i +
-            1}: cannot reassign variable ${leftName} because it is bound to an expression`
+            1}: cannot reassign variable ${leftTrimmed} because it is bound to an expression`
         )
       }
       if (variables.length > 0) {
-        assignedExpressions.add(leftName)
+        assignedExpressions.add(leftTrimmed)
         update.push(
           `if(${variables
             .map((variable: any) => `dirty.${variable}`)
-            .join('||')}){${leftName}=${right};invalidate('${leftName}')}`
+            .join(
+              '||'
+            )}){${leftTrimmed} =${right};invalidate('${leftTrimmed}')}`
         )
         for (const variable of variables) {
           rightVariables.add(variable)
         }
       }
     }
-    if (assigned.has(leftName)) {
-      if (rightVariables.has(leftName)) {
+    if (assigned.has(leftTrimmed)) {
+      if (rightVariables.has(leftTrimmed)) {
         variablesCode.push(
-          `${leftName} = ${right}; invalidate('${leftName}'); update()`
+          `${leftTrimmed} = ${right}; invalidate('${leftTrimmed}'); update()`
         )
       } else {
-        variablesCode.push(`${leftName} = ${right};`)
+        variablesCode.push(`${leftTrimmed} =${right}`)
       }
     } else {
-      variablesCode.push(`let ${leftName} = ${right}`)
-      assigned.add(leftName)
+      variablesCode.push(`let ${leftTrimmed} =${right}`)
+      assigned.add(leftTrimmed)
     }
   }
 
-  const result = `
+  let result = variablesCode.join('\n')
+
+  if (assignedExpressions.size > 0) {
+    result = `
 let dirty = {}
 let scheduledUpdate
 function invalidate(variableName, variableValue){
   dirty[variableName] = true
   if(!scheduledUpdate){
-    scheduledUpdate  = setTimeout(update, 0)
+    scheduledUpdate = setTimeout(update, 0)
   }
 }
 
-${variablesCode.join('\n')}
+${result}
+
 function update(){
   ${update.join('\n  ')}
   dirty={}
-}
-`
+}`
+  }
   return result
 }
 

@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "create_tests": "rimraf test/generated && node test/create_tests.js",
-    "build": "tsc"
+    "test:create": "rimraf test/generated && node test/create_tests.js",
+    "test:watch": "jest --watch",
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "keywords": [],
   "author": "",

@@ -4,9 +4,9 @@ const util = require('util')
 const { compile } = require('../../dist/compile.js')
 
 const readFile = util.promisify(fs.readFile)
-const folderPath = path.join(__dirname, '..', 'fixtures', 'independent_variables')
+const folderPath = path.join(__dirname, '..', 'fixtures', 'dependend_variable')
 
-test('independent_variables', async () => {
+test('dependend_variable', async () => {
   const inputPromise = readFile(path.join(folderPath, 'input.txt'), 'utf-8')
   const expectedPromise = readFile(path.join(folderPath, 'expected.js'), 'utf-8')
   const [input, expected] = await Promise.all([inputPromise, expectedPromise])
