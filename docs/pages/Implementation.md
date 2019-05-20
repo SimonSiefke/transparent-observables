@@ -1,3 +1,3 @@
 # Implementation
 
-Ideally this would be
+TypeScript was used as a programming language to implement the language specified in the previous section.
