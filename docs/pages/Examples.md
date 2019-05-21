@@ -131,17 +131,17 @@ By separating the logic UI makes it easier to understand and refactor code. For 
 
 ```js
 $mouseTarget = undefined
-function handleMouseMove(event) {
+function handleMousemove(event) {
   $mouseTarget = event.target
 }
-window.addEventListener('mousemove', handleMouseMove)
-window.addEventListener('touchstart', handleMouseMove)
+window.addEventListener('mousemove', handleMousemove)
+window.addEventListener('touchstart', handleMousemove)
 ```
 
 Compared to JavaScript:
 
 ```js
-function handleMouseMove(event){
+function handleMousemove(event){
   const $hoveredLink = findLink(event.target)
   if ($hoveredLink && !preloadedPages.has($hoveredLink.href)) {
     preloadedPages.add($hoveredLink.href)
@@ -149,8 +149,8 @@ function handleMouseMove(event){
   }
 }
 
-window.addEventListener('mousemove', handleMouseMove)
-window.addEventListener('touchstart', handleMouseMove)
+window.addEventListener('mousemove', handleMousemove)
+window.addEventListener('touchstart', handleMousemove)
 ```
 
-In JavaScript, everything that happens when the mouse is moved or the display is touched is crammed into the `handleMouseMove` function. This might can be a good thing or a bad thing. The good part is that that logic is encapsulated in a single block, which is useful when somebody wants to know what happens when the mouse is moved. The bad part is that if somebody wants to know when a page is preloaded, it is not in the determine-when-link-should-be-preloaded-section but in the `handleMouseMove` function. In UI it is the other way around: Less encapsulated but sectioned into sections that logically fit together.
+In JavaScript, everything that happens when the mouse is moved or the display is touched is crammed into the `handleMousemove` function. This might can be a good thing or a bad thing. The good part is that that logic is encapsulated in a single block, which is useful when somebody wants to know what happens when the mouse is moved. The bad part is that if somebody wants to know when a page is preloaded, it is not in the determine-when-link-should-be-preloaded-section but in the `handleMousemove` function. In UI it is the other way around: Less encapsulated but sectioned into sections that logically fit together.
