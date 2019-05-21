@@ -154,3 +154,74 @@ window.addEventListener('touchstart', handleMousemove)
 ```
 
 In JavaScript, everything that happens when the mouse is moved or the display is touched is crammed into the `handleMousemove` function. This might can be a good thing or a bad thing. The good part is that that logic is encapsulated in a single block, which is useful when somebody wants to know what happens when the mouse is moved. The bad part is that if somebody wants to know when a page is preloaded, it is not in the determine-when-link-should-be-preloaded-section but in the `handleMousemove` function. In UI it is the other way around: Less encapsulated but sectioned into sections that logically fit together.
+
+## Time example
+
+The goal is to create an application that displays the current time. The current time should update every second. For this example, we will focus on the time updating logic and omit the html code.
+
+With UI:
+
+```js
+export time = new Date()
+setInterval(() => {
+  time = new Date()
+}, 1000)
+```
+
+With Svelte (modified example from the svelte docs, https://svelte.dev/examples#readable-stores):
+
+```js
+import { readable } from 'svelte/store'
+
+export const time = readable(new Date(), set => {
+  const interval = setInterval(() => {
+    set(new Date())
+  }, 1000)
+
+  return () => {
+    clearInterval(interval)
+  }
+})
+```
+
+With React (modified example from https://codepen.io/katrpilar/pen/oQwXPw?editors=0010):
+
+```js
+import { useState, useEffect } from 'react'
+
+export function useTime() {
+  const [time, setTime] = useState(new Date())
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date())
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+  return time
+}
+```
+
+With Vue (modified example from https://github.com/yyx990803/vue-hooks)
+
+```js
+import { useState, useEffect } from 'vue-hooks'
+
+export function useTime() {
+  const [time, setTime] = useState(new Date())
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(new Date())
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+  return time
+}
+```
+
+With UI, there is the least amount of code. This is because the code is transpiled into reactive code. The other examples use plain JavaScript, which results in longer code because assignments are not reactive. Semantically, `time = new Date()` in UI is equivalent to `setTime(new Date())` in the Vue and React example. Another difference between UI and the other examples is the cleanup function. With UI, the `clearInterval` function is not needed.
