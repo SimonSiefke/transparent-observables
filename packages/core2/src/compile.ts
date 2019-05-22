@@ -90,7 +90,7 @@ export function compile(file: string): string {
     result = `
 let dirty = {}
 let scheduledUpdate
-function invalidate(variableName, variableValue){
+function invalidate(variableName){
   dirty[variableName] = true
   if(!scheduledUpdate){
     scheduledUpdate = setTimeout(update, 0)
