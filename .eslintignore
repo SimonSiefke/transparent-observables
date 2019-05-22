@@ -5,3 +5,4 @@ dist
 docs
 **/test/fixtures/**
 **/test/generated/**
+node_modules
