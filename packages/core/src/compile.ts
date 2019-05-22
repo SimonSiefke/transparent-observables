@@ -80,7 +80,7 @@ export function compile(file: string): string {
         assignedExpressions.add(leftTrimmed)
         update.push(
           `if(${variables
-            .map((variable: any) => `dirty.${variable}`)
+            .map((variable: any) => `dirty.has('${variable}')`)
             .join(
               '||'
             )}){${leftTrimmed} =${right};invalidate('${leftTrimmed}')}`
@@ -93,7 +93,7 @@ export function compile(file: string): string {
     if (assigned.has(leftTrimmed)) {
       if (rightVariables.has(leftTrimmed)) {
         variablesCode.push(
-          `${leftTrimmed} = ${right}; invalidate('${leftTrimmed}'); update()`
+          `${leftTrimmed} = ${right}; invalidate('${leftTrimmed}');`
         )
       } else {
         variablesCode.push(`${leftTrimmed} =${right}`)
@@ -108,21 +108,14 @@ export function compile(file: string): string {
 
   if (assignedExpressions.size > 0) {
     result = `
-let dirty = {}
-let scheduledUpdate
-function invalidate(variableName){
-  dirty[variableName] = true
-  if(!scheduledUpdate){
-    scheduledUpdate = setTimeout(update, 0)
-  }
-}
+import { updates, invalidate, dirty } from 'ui'
 
 ${result}
 
 function update(){
   ${update.join('\n  ')}
-  dirty={}
-}`
+}
+updates.push(update)`
   }
   return result
 }
