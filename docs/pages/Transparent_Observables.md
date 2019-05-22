@@ -29,6 +29,52 @@ One way to evaluate this code is that in line 3, `y` would be assigned the value
 
 The other way to evaluate the code is that in line 4, `y` would still be bound by the assignment in line 2 and that it would reactively update to 13. This would be confusing because in line 3 it was assigned the value 1 and now it doesn't have the value 1 anymore?
 
+### Imports and Exports
+
+In JavaScript, things can be imported and exported from files to share code between modules and encapsulate logic. Many programming languages do this.
+
+```js
+// bubbleSort.js
+export function bubbleSort(array) {
+  if (array.length <= 2) {
+    return array
+  }
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] > array[j]) {
+        ;[array[i], array[j]] = [array[j], array[i]]
+      }
+    }
+  }
+  return array
+}
+```
+
+```js
+// main.js
+import { bubbleSort } from './bubbleSort.js'
+
+console.log(bubbleSort([2, 1, 3, 4])) // [1, 2, 3, 4]
+```
+
+In UI, imports and exports are also available and they are reactive. The difference to JavaScript is that the keywords `let` and `const` are not needed.
+
+```js
+// count.ui
+export count = 0
+
+setInterval(() => {
+  count++
+}, 1000);
+```
+
+```js
+// main.ui
+import { count } from './count.ui'
+
+document.body.innerHTML = count // updates every second
+```
+
 ## Dom Api's
 
 There is a number of Api's available that enables JavaScript interacting with HTML and CSS. Currently there is only a fraction of DOM Api's available:
@@ -106,7 +152,7 @@ The Api's and methods not listed above are not available. This includes:
 
 - alert
 - confirm
-- console.*
+- console.\*
 - localStorage
 - indexedDB
 
