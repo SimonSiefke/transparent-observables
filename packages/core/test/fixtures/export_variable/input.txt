@@ -1,0 +1,5 @@
+export count = 0
+
+setInterval(()=>{
+  count = count + 1
+}, 1000)

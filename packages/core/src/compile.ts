@@ -5,12 +5,15 @@
 
 // const file = fs.readFileSync(path.join(__dirname, './index.txt'), 'utf-8')
 
-export function compile(file: string): string {
-  const nonEmptyLineRE = /^([a-zA-Z]+)\s*(<-|<->|=)\s*([^\s]+)\s*/
-  const emptyLineRE = /^\s*$/
-  const expressionRE = /console/
-  const commentRE = /^\/\//
+const nonEmptyLineRE = /^\s*([a-zA-Z]+)\s*(=)\s*([^\s+]+)\s*/
+const emptyLineRE = /^\s*$/
+const expressionRE = /console/
+const commentRE = /^\/\//
+const exportRE = /^\s*export/
+const functionInvocationRE = /^\s*[a-zA-Z]+\(/
+const endOfBlockRE = /^}/
 
+export function compile(file: string): string {
   const lines = file.split('\n')
   const assigned = new Set()
   const assignedExpressions = new Set()
@@ -40,11 +43,28 @@ export function compile(file: string): string {
       variablesCode.push(line)
       continue
     }
+    if (exportRE.test(line)) {
+      variablesCode.push(line.replace('export', 'export let'))
+      const leftTrimmed = line
+        .split('=')[0]
+        .replace('export', '')
+        .trim()
+      assigned.add(leftTrimmed)
+      continue
+    }
+    if (functionInvocationRE.test(line)) {
+      variablesCode.push(line)
+      continue
+    }
+    if (endOfBlockRE.test(line)) {
+      variablesCode.push(line)
+      continue
+    }
     if (!nonEmptyLineRE.test(line)) {
       throw new Error(`invalid line ${i + 1}`)
     }
 
-    const [left, middle, right] = line.split(/(<-|<->|=)(.+)/)
+    const [left, middle, right] = line.split(/(=)(.+)/)
 
     const leftTrimmed = left.trim()
 
