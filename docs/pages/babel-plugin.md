@@ -1,4 +1,4 @@
-The Folder structure is pretty simple:
+<!-- The Folder structure is pretty simple:
 ```
 src/
 ├── compiler.ts
@@ -23,4 +23,4 @@ let y = observable(() => x + 1)
 x.value++
 ```
 
-The `observable.ts` has all the required runtime code (e.g. the source code of the `observable` function and more).
+The `observable.ts` has all the required runtime code (e.g. the source code of the `observable` function and more). -->

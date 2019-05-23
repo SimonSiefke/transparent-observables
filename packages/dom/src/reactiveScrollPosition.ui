@@ -1,0 +1,7 @@
+export scrollY = window.scrollY
+export scrollX = window.scrollX
+
+window.addEventListener('scroll', event => {
+  scrollY = event.pageY
+  scrollX = event.pageX
+})

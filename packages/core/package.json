@@ -4,26 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run test:create && jest",
     "test:create": "rimraf test/generated && node test/create_tests.js",
-    "test:watch": "jest --watch",
+    "test:watch": "npm run test:create && jest --watch",
     "build": "tsc",
     "dev": "tsc --watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "example": "ts-node example/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node example/pre.ts\" \"parcel example/src/example.html\""
   },
   "keywords": [],
   "author": "Simon Siefke",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.2",
+    "concurrently": "^4.1.0",
     "eslint": "^5.16.0",
     "eslint-config-bitworkers": "^1.21.13",
     "jest": "^24.8.0",
+    "parcel": "^1.12.3",
     "prettier": "^1.17.1",
     "prettier-config-bitworkers": "^1.5.0",
     "rimraf": "^2.6.3",
+    "ts-node": "^8.1.0",
     "typescript": "^3.4.5"
   }
 }

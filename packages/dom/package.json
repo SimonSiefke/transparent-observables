@@ -4,17 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "rimraf dist && ts-node scripts/compile.ts"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "rxjs": "^6.5.1",
-    "rxjs-compat": "^6.5.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "jest": "^24.7.1",
-    "ts-jest": "^24.0.2"
+    "eslint": "^5.16.0",
+    "eslint-config-bitworkers": "^1.21.13",
+    "prettier": "^1.17.1",
+    "prettier-config-bitworkers": "^1.5.0",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
   }
 }

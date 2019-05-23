@@ -1,0 +1,12 @@
+export storage = {
+  get(key) {
+    return JSON.parse(localStorage.getItem(key))
+  },
+  set(key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
+  },
+}
+
+window.addEventListener('storage', event => {
+  storage = JSON.parse(event.newValue)
+})

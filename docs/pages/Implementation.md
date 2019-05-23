@@ -52,6 +52,7 @@ function updateAll(): void {
     update()
   }
   dirty.clear()
+  scheduledUpdate = undefined
 }
 
 /**
