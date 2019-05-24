@@ -10,7 +10,8 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "lint": "eslint .",
-    "example": "ts-node example/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node example/pre.ts\" \"parcel example/src/example.html\""
+    "example:counter": "ts-node examples/counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node examples/counter/pre.ts\" \"parcel examples/counter/src/counter.html\"",
+    "example:todolist": "ts-node examples/todolist/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node examples/todolist/pre.ts\" \"parcel examples/todolist/src/todolist.html\""
   },
   "keywords": [],
   "author": "Simon Siefke",

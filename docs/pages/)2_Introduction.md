@@ -25,3 +25,5 @@ Progressive web apps make websites more accessible for users on every device, bu
 Progressive web apps can also be installed on laptops and pc's, which makes them easier to access for laptop and pc users.
 
 Web technologies are also popular for more advanced desktop applications, for example Visual Studio Code by Microsoft, Atom by Github both use HTML, CSS and JavaScript on top of Electron which is a framework for developing desktop applications that have access to the file system, can execute commands etc.
+
+Also more and more application logic is shifted onto frontend javascript applications. For example squoosh.app is an image optimization application developed by GoogleChromeLabs. Efficient compression algorithms written in C++ have been transpiled into webassembly and are executed by the client's browser.
