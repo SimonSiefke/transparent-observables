@@ -160,3 +160,8 @@ The Api's that are not available fall into two categories:
 
 1. The ones that are not available because I just haven't implemented them yet (e.g. `localStorage`), and which can be implemented in a reactive way.
 1. The ones that are currently not intended be implemented (e.g. `console.log`). The reason `console.log` is not available is because it would be rather confusing when a variable would be logged every time that it changes.
+
+<!-- new section -->
+
+1. Reactive assignments can only appear at the toplevel of the program.
+1. JavaScript uses call by value for primitive data types (number,undefined,null,string,boolean) and call by reference for everything else(objects, arrays, functions)
