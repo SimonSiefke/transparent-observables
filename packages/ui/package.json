@@ -16,5 +16,8 @@
     "prettier-config-bitworkers": "^1.5.1",
     "rimraf": "^2.6.3",
     "typescript": "^3.5.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
