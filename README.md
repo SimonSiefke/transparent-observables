@@ -14,6 +14,8 @@ node --version
 
 ```sh
 npm ci &&
+cd examples &&
+npm run example:counter
 ```
 
 ## Run the tests
