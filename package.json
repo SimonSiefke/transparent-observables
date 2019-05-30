@@ -9,16 +9,12 @@
   "author": "Simon Siefke",
   "license": "MIT",
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.2",
-    "@semantic-release/git": "^7.0.8",
-    "@semantic-release/github": "^5.2.10",
     "@types/node": "^12.0.3",
     "eslint": "^5.16.0",
     "eslint-config-bitworkers": "^1.21.14",
     "lerna": "^3.14.1",
     "prettier": "^1.17.1",
     "prettier-config-bitworkers": "^1.5.1",
-    "semantic-release": "^15.13.14",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1"
   }

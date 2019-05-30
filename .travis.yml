@@ -2,15 +2,4 @@ language: node_js
 node_js: lts/*
 
 script:
-  - npm run build:docs
-
-stages:
-  - name: release
-    if: branch = master AND type = push AND fork = false
-
-jobs:
-  include:
-    - stage: release
-      script:
-        - npm run build:docs
-        - npx semantic-release
+  - npm run build
