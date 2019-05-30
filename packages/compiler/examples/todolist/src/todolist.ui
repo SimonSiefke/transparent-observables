@@ -6,8 +6,4 @@ document.querySelector('add').addEventListener('click', ()=>{
   newTodo = ''
 })
 
-document.querySelector('#todos').innerHTML = `
-<ul>
-  ${todosHTML.join('\n')}
-</ul>
-`
+document.querySelector('#todos').innerHTML = `<ul>${todosHTML.join('\n')}</ul>`

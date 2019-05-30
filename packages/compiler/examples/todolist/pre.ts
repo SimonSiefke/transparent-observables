@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { compile } from '../../src/compile'
+import { compile } from '../../src'
 
 const exampleCode = fs.readFileSync(
   path.join(__dirname, './src/todolist.ui'),

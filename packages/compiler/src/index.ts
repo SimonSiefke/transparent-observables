@@ -67,19 +67,24 @@ export function compile(file: string): string {
         variable => !variable.startsWith('event')
       )
       if (assignedExpressions.has(leftTrimmed)) {
-        throw new Error(
-          `Error on line ${i +
-            1}: cannot reassign variable ${leftTrimmed} because it is bound to an expression`
-        )
+        // throw new Error(
+        //   `Error on line ${i +
+        //     1}: cannot reassign variable ${leftTrimmed} because it is bound to an expression`
+        // )
       }
       if (variables.length > 0 && !variables.includes(leftTrimmed)) {
         assignedExpressions.add(leftTrimmed)
         update.push(
           `if(${variables
-            .map((variable: any) => `dirty.has('${variable}')`)
+            .map(
+              (variable: any) => `dirty.has('${variable.replace(/'/g, "\\'")}')`
+            )
             .join(
               '||'
-            )}){${leftTrimmed} =${right};invalidate('${leftTrimmed}')}`
+            )}){${leftTrimmed} =${right};invalidate('${leftTrimmed.replace(
+            /'/g,
+            "\\'"
+          )}')}`
         )
         for (const variable of variables) {
           rightVariables.add(variable)
