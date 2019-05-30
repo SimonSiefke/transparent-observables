@@ -13,6 +13,7 @@ node --version
 ## Quickstart 🚀
 
 ```sh
+git clone https://github.com/SimonSiefke/transparent-observables.git &&
 npm ci &&
 cd examples &&
 npm run example:counter
