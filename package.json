@@ -1,7 +1,7 @@
 {
   "name": "transparent-observables",
   "scripts": {
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna run build && lerna bootstrap",
     "build": "lerna run build",
     "publish": "npm run build && lerna publish"
   },
