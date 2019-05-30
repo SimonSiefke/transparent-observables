@@ -5,6 +5,7 @@
     "example:counter": "ts-node counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node counter/pre.ts\" \"parcel counter/src/counter.html\"",
     "example:todolist": "ts-node todolist/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node todolist/pre.ts\" \"parcel todolist/src/todolist.html\""
   },
+  "private": true,
   "keywords": [],
   "author": "",
   "license": "MIT",
