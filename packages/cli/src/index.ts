@@ -14,7 +14,6 @@ if (!fs.existsSync('dist')) {
 
 for (const file of files) {
   if (!file.endsWith('.ui')) {
-    console.log('err')
     throw new Error('file must end with ".ui"')
   }
   const fileContent = fs.readFileSync(file, 'utf-8')
