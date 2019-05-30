@@ -1,0 +1,22 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "scripts": {
+    "example:counter": "ts-node counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node counter/pre.ts\" \"parcel counter/src/counter.html\"",
+    "example:todolist": "ts-node todolist/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node todolist/pre.ts\" \"parcel todolist/src/todolist.html\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1",
+    "parcel": "^1.12.3",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "@relevant/compiler": "^0.0.5",
+    "@relevant/ui": "0.0.5"
+  }
+}

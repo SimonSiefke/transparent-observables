@@ -1,5 +1,27 @@
 [![travis build](https://img.shields.io/travis/com/SimonSiefke/transparent-observables.svg?style=flat-square)](https://travis-ci.com/SimonSiefke/transparent-observables) [![MIT License](https://img.shields.io/github/license/SimonSiefke/transparent-observables.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
+# Transparent Observables
+
+## Prerequisites
+
+Make sure you have installed [Node.js](https://nodejs.org/en/). To check the version of Node.js that you have installed, run:
+
+```sh
+node --version
+```
+
+## Quickstart 🚀
+
+```sh
+npm ci &&
+```
+
+## Run the tests
+
+```sh
+npm test
+```
+
 <!--
 ## disabled expressions
 

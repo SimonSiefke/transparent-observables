@@ -11,9 +11,7 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "dev": "tsc --watch",
-    "lint": "eslint .",
-    "example:counter": "ts-node examples/counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node examples/counter/pre.ts\" \"parcel examples/counter/src/counter.html\"",
-    "example:todolist": "ts-node examples/todolist/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node examples/todolist/pre.ts\" \"parcel examples/todolist/src/todolist.html\""
+    "lint": "eslint ."
   },
   "publishConfig": {
     "access": "public"
@@ -23,9 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^24.0.13",
-    "concurrently": "^4.1.0",
     "jest": "^24.8.0",
-    "parcel": "^1.12.3",
     "rimraf": "^2.6.3",
     "typescript": "^3.5.1"
   },
