@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:create && jest",
-    "test:create": "rimraf test/generated && node test/create_tests.js",
-    "test:watch": "npm run test:create && jest --watch",
+    "test": "npm run test:generate && jest",
+    "test:generate": "rimraf test/generated && node test/generate_tests.js",
+    "test:watch": "npm run test:generate && jest --watch",
     "build": "tsc",
     "dev": "tsc --watch",
     "lint": "eslint .",
@@ -18,16 +18,16 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.2",
+    "@types/node": "^12.0.3",
     "concurrently": "^4.1.0",
     "eslint": "^5.16.0",
-    "eslint-config-bitworkers": "^1.21.13",
+    "eslint-config-bitworkers": "^1.21.14",
     "jest": "^24.8.0",
     "parcel": "^1.12.3",
     "prettier": "^1.17.1",
-    "prettier-config-bitworkers": "^1.5.0",
+    "prettier-config-bitworkers": "^1.5.1",
     "rimraf": "^2.6.3",
-    "ts-node": "^8.1.0",
-    "typescript": "^3.4.5"
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
   }
 }
