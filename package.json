@@ -5,7 +5,8 @@
     "build": "tsc -b",
     "clean": "lerna run clean",
     "release": "npm run build && lerna publish",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "Simon Siefke",

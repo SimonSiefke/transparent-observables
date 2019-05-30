@@ -4,7 +4,8 @@
     "outDir": "dist",
     "composite": true,
     "incremental": true,
-    "rootDir": "src"
+    "rootDir": "src",
+    "types": ["jest", "node"]
   },
   "include": ["src"],
   "references": [{ "path": "../compiler" }]

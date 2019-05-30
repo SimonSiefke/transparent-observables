@@ -1,9 +1,9 @@
-const { exec } = require('child_process')
-const path = require('path')
+import * as path from 'path'
+import { exec } from 'child_process'
 
 // exec(`cd ${__dirname} && pwd`).on('message', console.log)
 // const result = program.parse(['fixtures/test.ui'])
-function cli(args, cwd) {
+function cli(args: string[], cwd: string): Promise<any> {
   return new Promise(resolve => {
     exec(
       `node ${path.join(__dirname, '../dist/index.js')} ${args.join(' ')}`,
