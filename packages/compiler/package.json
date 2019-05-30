@@ -35,6 +35,5 @@
   },
   "dependencies": {
     "@relevant/ui": "^0.0.4"
-  },
-  "gitHead": "96aee1870c55375af33c752dc21df243505ffa04"
+  }
 }
