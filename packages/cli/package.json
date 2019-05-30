@@ -2,7 +2,9 @@
   "name": "@relevant/cli",
   "version": "0.0.7",
   "description": "",
-  "main": "dist/index.js",
+  "bin": {
+    "relevant": "dist/index.js"
+  },
   "scripts": {
     "test": "npm run build && rimraf test/dist && jest",
     "clean": "rimraf dist tsconfig.buildinfo",
