@@ -8,6 +8,10 @@
     "test": "lerna run test",
     "lint": "eslint ."
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SimonSiefke/transparent-observables.git"
+  },
   "keywords": [],
   "author": "Simon Siefke",
   "license": "MIT",

@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 /* eslint-disable import/no-unresolved */
 import program from 'commander'
 import * as fs from 'fs'
