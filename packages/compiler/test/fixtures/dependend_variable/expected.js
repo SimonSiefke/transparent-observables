@@ -1,4 +1,4 @@
-import { updates, invalidate, dirty } from 'ui'
+import { updates, invalidate, dirty } from '@relevant/ui'
 
 let x = 0
 let y = x + 1

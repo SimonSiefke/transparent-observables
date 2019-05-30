@@ -1,23 +1,27 @@
 {
-  "name": "@relevant/ui",
+  "name": "@relevant/cli",
   "version": "0.0.5",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -b",
+    "test": "npm run build && rimraf test/dist && jest",
     "clean": "rimraf dist tsconfig.buildinfo",
-    "test": ""
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@relevant/compiler": "^0.0.5"
+    "@relevant/compiler": "^0.0.5",
+    "commander": "^2.20.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
+    "@types/node": "^12.0.4",
+    "jest": "^24.8.0",
     "rimraf": "^2.6.3",
     "typescript": "^3.5.1"
   }

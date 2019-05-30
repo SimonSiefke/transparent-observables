@@ -1,3 +1,6 @@
 module.exports = {
-  extends: 'bitworkers'
+  extends: 'bitworkers',
+  env: {
+    jest: true,
+  },
 }

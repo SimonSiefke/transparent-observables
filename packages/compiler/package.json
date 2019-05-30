@@ -7,7 +7,9 @@
     "test": "npm run test:generate && jest",
     "test:generate": "rimraf test/generated && node test/generate_tests.js",
     "test:watch": "npm run test:generate && jest --watch",
-    "build": "rimraf dist && tsc",
+    "clean": "rimraf dist tsconfig.buildinfo",
+    "build": "tsc",
+    "build:watch": "tsc -w",
     "dev": "tsc --watch",
     "lint": "eslint .",
     "example:counter": "ts-node examples/counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node examples/counter/pre.ts\" \"parcel examples/counter/src/counter.html\"",
@@ -21,16 +23,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.3",
     "concurrently": "^4.1.0",
-    "eslint": "^5.16.0",
-    "eslint-config-bitworkers": "^1.21.14",
     "jest": "^24.8.0",
     "parcel": "^1.12.3",
-    "prettier": "^1.17.1",
-    "prettier-config-bitworkers": "^1.5.1",
     "rimraf": "^2.6.3",
-    "ts-node": "^8.2.0",
     "typescript": "^3.5.1"
   },
   "dependencies": {

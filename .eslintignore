@@ -3,7 +3,7 @@ dist
 *.json
 *.md
 docs
-test/fixtures/**
-test/generated/**
-node_modules
+**/test/fixtures/**
+**/test/generated/**
+**/node_modules
 example

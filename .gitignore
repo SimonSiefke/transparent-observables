@@ -6,6 +6,7 @@ dist
 out
 faq
 o.*
+*.tsbuildinfo
 
 # Logs
 logs

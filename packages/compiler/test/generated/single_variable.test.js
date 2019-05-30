@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const util = require('util')
-const { compile } = require('../../dist/compile.js')
+const { compile } = require('../../dist/index.js')
 
 const readFile = util.promisify(fs.readFile)
 const folderPath = path.join(__dirname, '..', 'fixtures', 'single_variable')

@@ -2,14 +2,16 @@
   "name": "transparent-observables",
   "scripts": {
     "postinstall": "lerna run build && lerna bootstrap",
-    "build": "lerna run build",
-    "release": "npm run build && lerna publish"
+    "build": "tsc -b",
+    "clean": "lerna run clean",
+    "release": "npm run build && lerna publish",
+    "test": "lerna run test"
   },
   "keywords": [],
   "author": "Simon Siefke",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^12.0.3",
+    "@types/node": "^12.0.4",
     "eslint": "^5.16.0",
     "eslint-config-bitworkers": "^1.21.14",
     "lerna": "^3.14.1",
