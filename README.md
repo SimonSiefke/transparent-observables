@@ -1,4 +1,4 @@
-[![travis build](https://img.shields.io/travis/com/SimonSiefke/transparent-observables.svg?style=flat-square)](https://travis-ci.com/SimonSiefke/transparent-observables) [![MIT License](https://img.shields.io/github/license/SimonSiefke/transparent-observables.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![travis build](https://img.shields.io/travis/com/SimonSiefke/transparent-observables.svg?style=flat-square)](https://travis-ci.com/SimonSiefke/transparent-observables) [![MIT License](https://img.shields.io/github/license/SimonSiefke/transparent-observables.svg?style=flat-square)](http://opensource.org/licenses/MIT) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 # Transparent Observables
 
