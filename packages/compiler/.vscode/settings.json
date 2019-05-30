@@ -1,4 +1,3 @@
 {
-  "javascript.implicitProjectConfig.checkJs": false,
-  "prettier.eslintIntegration": true
+  "javascript.implicitProjectConfig.checkJs": false
 }

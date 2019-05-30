@@ -1,6 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
 /* eslint-disable no-continue */
-
 const emptyLineRE = /^\s*$/
 const expressionRE = /^\s*(console|window|return|localStorage)/
 const commentRE = /^\/\//
@@ -20,7 +19,7 @@ export function compile(file: string): string {
   }
   function getVariables(code: string): any[] {
     return code
-      .split(/[+\-*/{}$,`\[\]]/)
+      .split(/[+\-*/{}$,`[\]]/)
       .filter(x => !isNumber(x))
       .map(variable => variable.trim())
       .filter(Boolean)
