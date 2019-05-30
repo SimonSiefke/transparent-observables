@@ -1,0 +1,20 @@
+{
+  "name": "@relevant/ui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-bitworkers": "^1.21.14",
+    "prettier": "^1.17.1",
+    "prettier-config-bitworkers": "^1.5.1",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.5.1"
+  }
+}

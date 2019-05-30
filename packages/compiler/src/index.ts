@@ -109,7 +109,7 @@ export function compile(file: string): string {
 
   if (assignedExpressions.size > 0) {
     result = `
-import { updates, invalidate, dirty } from 'ui'
+import { updates, invalidate, dirty } from '@relevant/ui'
 
 ${result}
 

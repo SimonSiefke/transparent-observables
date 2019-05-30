@@ -1,13 +1,13 @@
 {
-  "name": "core",
-  "version": "1.0.0",
+  "name": "@relevant/compiler",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "npm run test:generate && jest",
     "test:generate": "rimraf test/generated && node test/generate_tests.js",
     "test:watch": "npm run test:generate && jest --watch",
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "dev": "tsc --watch",
     "lint": "eslint .",
     "example:counter": "ts-node examples/counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node examples/counter/pre.ts\" \"parcel examples/counter/src/counter.html\"",
@@ -29,5 +29,8 @@
     "rimraf": "^2.6.3",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "@relevant/ui": "^0.0.1"
   }
 }

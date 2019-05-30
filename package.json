@@ -1,13 +1,9 @@
 {
   "name": "transparent-observables",
-  "version": "0.0.0-semantically-released",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "cd docs && npm run dev",
-    "build:docs": "cd docs && npm run build && cd .. && node scripts/create_pdf.js",
-    "postinstall": "cd docs && npm install && cd .."
+    "postinstall": "lerna bootstrap",
+    "build": "lerna run build",
+    "publish": "npm run build && lerna publish"
   },
   "keywords": [],
   "author": "Simon Siefke",
@@ -16,8 +12,9 @@
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/github": "^5.2.10",
+    "@types/node": "^12.0.3",
     "lerna": "^3.14.1",
-    "semantic-release": "^15.13.3",
-    "ts-node": "^8.1.0"
+    "semantic-release": "^15.13.14",
+    "ts-node": "^8.2.0"
   }
 }

@@ -10,5 +10,5 @@ const exampleCode = fs.readFileSync(
 if (!fs.existsSync(path.join(__dirname, 'dist'))) {
   fs.mkdirSync(path.join(__dirname, 'dist'))
 }
-const generatedCode = compile(exampleCode).replace('ui', '../../../src/ui')
+const generatedCode = compile(exampleCode)
 fs.writeFileSync(path.join(__dirname, 'dist', 'todolist.ts'), generatedCode)
