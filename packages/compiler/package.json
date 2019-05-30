@@ -1,6 +1,6 @@
 {
   "name": "@relevant/compiler",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "typescript": "^3.5.1"
   },
   "dependencies": {
-    "@relevant/ui": "^0.0.3"
+    "@relevant/ui": "^0.0.4"
   },
   "gitHead": "96aee1870c55375af33c752dc21df243505ffa04"
 }
