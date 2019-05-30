@@ -4,7 +4,7 @@
 
 ```sh
 npm ci &&
-npm run example
+npm run example:counter
 ```
 
 ## Run the tests
