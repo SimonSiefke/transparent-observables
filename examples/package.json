@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "example:counter": "ts-node counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node counter/pre.ts\" \"parcel counter/src/counter.html\"",
     "example:todolist": "ts-node todolist/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node todolist/pre.ts\" \"parcel todolist/src/todolist.html\""
@@ -17,7 +17,7 @@
     "typescript": "^3.5.1"
   },
   "dependencies": {
-    "@relevant/compiler": "^0.0.6",
-    "@relevant/ui": "^0.0.6"
+    "@relevant/compiler": "^0.0.7",
+    "@relevant/ui": "^0.0.7"
   }
 }
