@@ -14,6 +14,7 @@ node --version
 
 ```sh
 git clone https://github.com/SimonSiefke/transparent-observables.git &&
+cd transparent-observables &&
 npm ci &&
 cd examples &&
 npm run example:counter
