@@ -2,8 +2,8 @@
   "name": "examples",
   "version": "0.0.9",
   "scripts": {
-    "example:counter": "ts-node counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node counter/pre.ts\" \"parcel counter/src/counter.html\"",
-    "example:todolist": "ts-node todolist/pre.ts && concurrently \"nodemon --ext ts,ui --ignore **/dist --exec ts-node todolist/pre.ts\" \"parcel todolist/src/todolist.html\""
+    "example:counter": "ts-node counter/pre.ts && concurrently \"nodemon --ext ts,ui --ignore counter/dist --exec ts-node counter/pre.ts\" \"parcel counter/src/counter.html\"",
+    "example:todolist": "ts-node todolist/pre.ts && concurrently \"nodemon --ext ts,ui --ignore todolist/dist --exec ts-node todolist/pre.ts\" \"parcel todolist/src/todolist.html\""
   },
   "private": true,
   "keywords": [],

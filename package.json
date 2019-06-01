@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/node": "^12.0.4",
     "eslint": "^5.16.0",
-    "eslint-config-bitworkers": "^1.21.14",
+    "eslint-config-bitworkers": "^1.21.15",
     "lerna": "^3.14.1",
     "prettier": "^1.17.1",
     "prettier-config-bitworkers": "^1.5.1",

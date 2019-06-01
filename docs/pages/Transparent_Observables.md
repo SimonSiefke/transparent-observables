@@ -6,29 +6,6 @@ A programming language that behaves like excel would treat bound variables as fi
 
 ## Syntax & Semantic
 
-### Assignments
-
-Assignments are reactive and they don't require the keyword `var`, `let` or `const` in front of them (like they would in JavaScript).
-
-```js
-x = 0
-y = x + 1
-x = 12 // updates the value of x and y
-```
-
-Also a variable can only be bound to one expression. The problem is that the reactivity of the variables would either be compromised or it would lead to unexpected results, for example:
-
-```js
-x = 0
-y = x + 1
-y = 1
-x = 12
-```
-
-One way to evaluate this code is that in line 3, `y` would be assigned the value 1 and that it is now bound to the value 1. The assignment in line 4 would not change the value of `y`. This means that the reactivity of line 2 would be lost.
-
-The other way to evaluate the code is that in line 4, `y` would still be bound by the assignment in line 2 and that it would reactively update to 13. This would be confusing because in line 3 it was assigned the value 1 and now it doesn't have the value 1 anymore?
-
 ### Imports and Exports
 
 In JavaScript, things can be imported and exported from files to share code between modules and encapsulate logic. Many programming languages do this.
@@ -42,7 +19,7 @@ export function bubbleSort(array) {
   for (let i = 0; i < array.length; i++) {
     for (let j = i + 1; j < array.length; j++) {
       if (array[i] > array[j]) {
-        ;[array[i], array[j]] = [array[j], array[i]]
+        ;[array[i], array[j]] = [array[j], array[i]] // swap
       }
     }
   }

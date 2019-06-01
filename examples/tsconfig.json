@@ -1,3 +1,9 @@
 {
-  "extends": "../tsconfig.settings.json"
+  "extends": "../tsconfig.settings.json",
+  "include": ["**/src/*.ts"],
+  "references": [{ "path": "../packages/compiler" }],
+  "compilerOptions": {
+    "composite": true,
+    "incremental": true
+  }
 }
