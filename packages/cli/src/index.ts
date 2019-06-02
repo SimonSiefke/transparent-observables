@@ -4,7 +4,14 @@ import program from 'commander'
 import * as fs from 'fs'
 import { compile } from '@relevant/compiler'
 
-program.version(require('../package.json').version).parse(process.argv)
+program
+  .version(require('../package.json').version)
+  .on('--help', () => {
+    console.log('')
+    console.log('Example:')
+    console.log('  $ relevant index.ui')
+  })
+  .parse(process.argv)
 
 const files = program.args
 
