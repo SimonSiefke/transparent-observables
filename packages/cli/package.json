@@ -1,6 +1,6 @@
 {
   "name": "@relevant/cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "bin": {
     "relevant": "dist/index.js"
@@ -15,7 +15,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@relevant/compiler": "^0.0.9",
+    "@relevant/compiler": "^0.0.10",
     "commander": "^2.20.0"
   },
   "publishConfig": {
