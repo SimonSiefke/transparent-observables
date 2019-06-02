@@ -25,7 +25,7 @@ function updateAll(): void {
 }
 
 /**
- * Marks a variable as dirty and triggers an update so that other variable that depend on this variable update.
+ * Marks a variable as dirty and triggers an update so that other variables that depend on this variable update.
  *
  * @param variableName - The name of the variable that changed.
  */
