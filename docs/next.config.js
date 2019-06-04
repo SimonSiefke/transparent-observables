@@ -14,3 +14,8 @@ module.exports = withPlugins([
   [withMDX, { pageExtensions: ['js', 'jsx', 'md', 'mdx'] }],
   [withCSS],
 ])
+
+function add() {
+  if (x > 2) {
+  }
+}

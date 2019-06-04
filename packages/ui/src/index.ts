@@ -9,7 +9,7 @@ export const dirty = new Set()
 let scheduledUpdate: NodeJS.Timeout | undefined
 
 /**
- * An array of update functions, each file has a update function.
+ * An array of update functions, each file has an update function.
  */
 export const updates: Function[] = []
 

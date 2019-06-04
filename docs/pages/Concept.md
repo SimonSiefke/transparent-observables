@@ -1,14 +1,5 @@
 # Concept
 
-The concept of transparent observables is simple: Using reactive programming in a way that makes working with observables easy by creating observable variables without explicitly registering or unregistering observers for the variable.
-
-Transparent observables are important for the following reasons
-
-- they are less errorprone and prevent memory leaks. This is similar to how higher order programming languages don't need to manage memory manually, because it is handled automatically
-- they are easier to learn and use because close to natural language
-- almost every user interface is reactive and needs code that handles reactivity. Traditional approaches are inefficient
-- observables are crucial for every dynamic user interface
-
 Two things are important for transparent observables:
 
 - simple syntax
