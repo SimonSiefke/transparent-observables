@@ -1,5 +1,0 @@
-export date = new Date()
-
-setInterval(() => {
-  date = new Date()
-}, 10)

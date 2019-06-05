@@ -1,7 +1,0 @@
-export function timer(time){
-  let result=0
-  setInterval(()=>{
-    result++
-  },time)
-  return result
-}
